@@ -20,6 +20,7 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
+<<<<<<< HEAD
   movie = Movie.new
   movie.title = attributes[:title]
   movie.release_date = attributes[:release_date]
@@ -37,6 +38,18 @@ def can_be_created_in_a_block(args = {title: "Home Alone", release_date: 1990, d
     m.director = args[:director]
     m.lead = args[:lead]
     m.in_theaters = args[:in_theaters]
+=======
+  movie = Movie.new(attribute.each{|key, value| key value})
+end
+
+def can_be_created_in_a_block(args = __)
+  # If no arguments are passed, use default values:
+  # title == "Home Alone"
+  # release_date == 1990
+
+  Movie.create do |m|
+    __
+>>>>>>> daecb178d0ab8c6a47282c945a0bae3a372e22da
   end
 end
 
@@ -69,7 +82,13 @@ def can_find_by_multiple_attributes
 end
 
 def can_find_using_where_clause_and_be_sorted
+<<<<<<< HEAD
   Movie.where(title: "Movie_3").or(Movie.where(title: "Movie_4")).order(title: :desc)
+=======
+  # For this test return all movies released after 2002 and ordered by
+  # release date descending
+  __
+>>>>>>> daecb178d0ab8c6a47282c945a0bae3a372e22da
 end
 
 def can_be_found_updated_and_saved
@@ -110,5 +129,9 @@ def can_destroy_all_items_at_once
   10.times do |i|
     Movie.create(title: "Movie_#{i}")
   end
+<<<<<<< HEAD
   Movie.destroy_all
+=======
+  __
+>>>>>>> daecb178d0ab8c6a47282c945a0bae3a372e22da
 end
